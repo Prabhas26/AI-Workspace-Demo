@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #111827;
+    line-height: 1.6;
+    transition: 0.3s ease;
+}
+.dark {
+    background-color: #111827;
+    color: white;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.dark .navbar {
+    background-color: #1f2937;
+}
+.dark .faq-item {
+    background-color: #1f2937;
+}
+.dark .nav-links a {
+    color: white;
+}
+.dark .modal {
+    background-color: #1f2937;
+    color: white;
+}
+.logo {
+    font-size: 28px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #111827;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-btn {
+    font-size: 28px;
+    cursor: pointer;
+    display: none;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.faq {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.question {
+    padding: 20px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.answer {
+    padding: 20px;
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal {
+    background-color: white;
+    padding: 40px;
+    border-radius: 14px;
+    width: 350px;
+    text-align: center;
+}
+
+.modal h2 {
+    margin-bottom: 15px;
+}
+
+.modal p {
+    margin-bottom: 20px;
+}
+
+@media (max-width:768px) {
+    .navbar {
+        padding: 20px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .nav-links.show {
+        display: flex;
+    }
+    .dark .nav-links {
+        background-color: #1f2937;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+}
+button, .faq-item, 
+.nav-links a, .modal {
+    transition: 0.3s ease;
+}
+button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+.faq-item:hover {
+    transform: translateY(-5px);
+}
+.hero {
+    animation: fadeIn 1s ease;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.modal {
+    animation: popup 0.4s ease;
+}
+@keyframes popup {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
